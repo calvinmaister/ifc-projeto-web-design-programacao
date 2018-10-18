@@ -1,34 +1,68 @@
-header,.colunas,footer {
-	border: 2px solid black;
+.tudo {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	margin: 0px;
+	justify-content: space-between;
 }
 
- main, nav, aside {
-	border: 2px solid red;
+header, footer {
+	grid-column: 1/4;
+}
+
+header {
+	background-color: #f7b63d;
+	padding: 20px;
+	font-size: 22px;
 }
 
 .corpo {
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-	margin: 0;
-	min-height: 100vh;
-}
-
-.colunas {
-	/*torna "colunas" um container flex*/
+	/*torna "corpo" um container flex*/
 	display: flex;
 	flex: 1;
+	font-size: 22px;
 }
 
-main {
-	flex-grow: 8;
+.principal {
+	padding-top: 20px;
+	flex: 1;
+	font-family: sans-serif;
 }
 
-nav {
+.menu, .lado {
+	/* 12em é a espessura das colunas */
+	flex: 0 0 8em;
+}
+
+.menu {
 	order: -1;
-	flex-grow: 1;
+	font-family: courier;
+	font-size: 20px;
+	padding-right: 30px;
 }
 
-aside {
-	flex-grow: 1;
+ul li {
+	display: block;
+	padding: 8px;
+	color: #000;
+}
+
+li a {
+	color: #000;
+	text-decoration: none;
+}
+
+footer {
+	background-color: #f4f0e8;
+	padding: 12px;
+}
+
+@media (max-width: 700px) {
+    .corpo {
+       flex-direction: column;
+    }  
+    
+    .menu, .lado {
+       	width: 100%;
+    }
 }
